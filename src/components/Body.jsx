@@ -11,7 +11,6 @@ const Body=()=>{
       <div className='resto-container'>
         <Restocard></Restocard>
         <Restocard></Restocard>
-        {/* <Restocard></Restocard>
         <Restocard></Restocard>
         <Restocard></Restocard>
         <Restocard></Restocard>
@@ -25,7 +24,8 @@ const Body=()=>{
         <Restocard></Restocard>
         <Restocard></Restocard>
         <Restocard></Restocard>
-        <Restocard></Restocard> */}
+        <Restocard></Restocard>
+        <Restocard></Restocard>
       </div>
       </>
     )
