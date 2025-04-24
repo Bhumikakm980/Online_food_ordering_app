@@ -10,8 +10,8 @@ const Body=()=>{
     const[topRated,setTopRated]=useState(restoList);
 
     function topRatedResto(){
-        const List=restoList.filter((item)=> {
-            if(item.rating>=4.8){
+        const List=topRated.filter((item)=> {
+            if(item.info.avgRating>=4){
                 return true;
             }
         })
@@ -23,9 +23,11 @@ const Body=()=>{
     },[])
 
     const name=async() =>{
-        const response= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-    const mod= await response.json();
-    console.log(mod);
+        // const response= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const response=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9615398&lng=79.2961468&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const jsonVal= await response.json();
+   
+    setTopRated(jsonVal?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     
     

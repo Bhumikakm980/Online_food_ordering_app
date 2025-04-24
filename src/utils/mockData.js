@@ -5,9 +5,9 @@ export const restoList=[
       "address": "Kalyan Nagar, Bengaluru",
       "latitude": 13.0098,
       "longitude": 77.6378,
-      "cuisine": ["Indian", "Biryani", "North Indian"],
-      "rating": 4.3,
-      "delivery_time": {
+      "cuisines": ["Indian", "Biryani", "North Indian"],
+      "avgRating": 4.3,
+      "sla": {
         "min": 30,
         "max": 45
       },
@@ -29,9 +29,9 @@ export const restoList=[
       "address": "MG Road, Bengaluru",
       "latitude": 12.9768,
       "longitude": 77.6037,
-      "cuisine": ["Chinese", "Asian"],
-      "rating": 4.0,
-      "delivery_time": {
+      "cuisines": ["Chinese", "Asian"],
+      "avgRating": 4.0,
+      "sla": {
         "min": 25,
         "max": 40
       },
@@ -48,9 +48,9 @@ export const restoList=[
       "address": "Jayanagar, Bengaluru",
       "latitude": 12.9283,
       "longitude": 77.5827,
-      "cuisine": ["South Indian", "Vegetarian"],
-      "rating": 4.6,
-      "delivery_time": {
+      "cuisines": ["South Indian", "Vegetarian"],
+      "avgRating": 4.6,
+      "sla": {
         "min": 20,
         "max": 35
       },
@@ -64,7 +64,7 @@ export const restoList=[
       "has_online_ordering": true,
       "has_delivery": true,
       "is_open": true,
-      "img": "https://www.bing.com/images/search?view=detailV2&ccid=bso0W6RU&id=F44B538B5597F220996F94EFE321A5138FC742D0&thid=OIP.bso0W6RUjvIhDlp5Y4TkxAHaE8&mediaurl=https%3a%2f%2fget.pxhere.com%2fphoto%2fdish-meal-food-salad-produce-plate-fish-breakfast-fast-food-meat-lunch-cuisine-hamburger-burger-sandwich-cheeseburger-french-fries-junk-food-fried-food-veggie-burger-617599.jpg&exph=1667&expw=2500&q=food+item+img&simid=608023566085613927&FORM=IRPRST&ck=63234A805CBAA77D4847F5FB572A8D20&selectedIndex=20&itb=0"
+      "img": "https://www.bing.com/images/search?view=detailV2&ccid=bso0W6RU&id=F44B538B5597F220996F94EFE321A5138FC742D0&thid=OIP.bso0W6RUjvIhDlp5Y4TkxAHaE8&mediaurl=https%3a%2f%2fget.pxhere.com%2fphoto%2fdish-meal-food-salad-produce-plate-fish-breakfast-fast-food-meat-lunch-cuisines-hamburger-burger-sandwich-cheeseburger-french-fries-junk-food-fried-food-veggie-burger-617599.jpg&exph=1667&expw=2500&q=food+item+img&simid=608023566085613927&FORM=IRPRST&ck=63234A805CBAA77D4847F5FB572A8D20&selectedIndex=20&itb=0"
     },
     {
       "restaurant_id": "44556",
@@ -72,9 +72,9 @@ export const restoList=[
       "address": "Whitefield, Bengaluru",
       "latitude": 12.9698,
       "longitude": 77.7495,
-      "cuisine": ["Italian", "Pasta", "Pizza"],
-      "rating": 4.1,
-      "delivery_time": {
+      "cuisines": ["Italian", "Pasta", "Pizza"],
+      "avgRating": 4.1,
+      "sla": {
         "min": 35,
         "max": 50
       },
@@ -83,7 +83,7 @@ export const restoList=[
       "has_online_ordering": true,
       "has_delivery": true,
       "is_open": false,
-      "img": "https://www.bing.com/images/search?view=detailV2&ccid=bso0W6RU&id=F44B538B5597F220996F94EFE321A5138FC742D0&thid=OIP.bso0W6RUjvIhDlp5Y4TkxAHaE8&mediaurl=https%3a%2f%2fget.pxhere.com%2fphoto%2fdish-meal-food-salad-produce-plate-fish-breakfast-fast-food-meat-lunch-cuisine-hamburger-burger-sandwich-cheeseburger-french-fries-junk-food-fried-food-veggie-burger-617599.jpg&exph=1667&expw=2500&q=food+item+img&simid=608023566085613927&FORM=IRPRST&ck=63234A805CBAA77D4847F5FB572A8D20&selectedIndex=20&itb=0"
+      "img": "https://www.bing.com/images/search?view=detailV2&ccid=bso0W6RU&id=F44B538B5597F220996F94EFE321A5138FC742D0&thid=OIP.bso0W6RUjvIhDlp5Y4TkxAHaE8&mediaurl=https%3a%2f%2fget.pxhere.com%2fphoto%2fdish-meal-food-salad-produce-plate-fish-breakfast-fast-food-meat-lunch-cuisines-hamburger-burger-sandwich-cheeseburger-french-fries-junk-food-fried-food-veggie-burger-617599.jpg&exph=1667&expw=2500&q=food+item+img&simid=608023566085613927&FORM=IRPRST&ck=63234A805CBAA77D4847F5FB572A8D20&selectedIndex=20&itb=0"
     },
     {
       "restaurant_id": "77889",
@@ -91,9 +91,9 @@ export const restoList=[
       "address": "Koramangala 5th Block, Bengaluru",
       "latitude": 12.9348,
       "longitude": 77.6279,
-      "cuisine": ["American", "Burgers", "Fast Food"],
-      "rating": 3.8,
-      "delivery_time": {
+      "cuisines": ["American", "Burgers", "Fast Food"],
+      "avgRating": 3.8,
+      "sla": {
         "min": 20,
         "max": 30
       },
@@ -110,9 +110,9 @@ export const restoList=[
       "address": "Marathahalli, Bengaluru",
       "latitude": 12.9559,
       "longitude": 77.6948,
-      "cuisine": ["Indian", "North Indian", "Tandoori"],
-      "rating": 4.4,
-      "delivery_time": {
+      "cuisines": ["Indian", "North Indian", "Tandoori"],
+      "avgRating": 4.4,
+      "sla": {
         "min": 25,
         "max": 40
       },
@@ -134,9 +134,9 @@ export const restoList=[
       "address": "Indiranagar 100 Feet Road, Bengaluru",
       "latitude": 12.9791,
       "longitude": 77.6403,
-      "cuisine": ["Japanese", "Sushi", "Asian"],
-      "rating": 4.5,
-      "delivery_time": {
+      "cuisines": ["Japanese", "Sushi", "Asian"],
+      "avgRating": 4.5,
+      "sla": {
         "min": 30,
         "max": 45
       },
@@ -153,9 +153,9 @@ export const restoList=[
       "address": "Electronic City, Bengaluru",
       "latitude": 12.8453,
       "longitude": 77.6602,
-      "cuisine": ["Italian", "Pizza", "Fast Food"],
-      "rating": 3.9,
-      "delivery_time": {
+      "cuisines": ["Italian", "Pizza", "Fast Food"],
+      "avgRating": 3.9,
+      "sla": {
         "min": 20,
         "max": 35
       },
@@ -177,9 +177,9 @@ export const restoList=[
       "address": "JP Nagar, Bengaluru",
       "latitude": 12.9093,
       "longitude": 77.5923,
-      "cuisine": ["South Indian", "Kerala"],
-      "rating": 4.7,
-      "delivery_time": {
+      "cuisines": ["South Indian", "Kerala"],
+      "avgRating": 4.7,
+      "sla": {
         "min": 25,
         "max": 40
       },
@@ -196,9 +196,9 @@ export const restoList=[
       "address": "HSR Layout Sector 1, Bengaluru",
       "latitude": 12.9185,
       "longitude": 77.6372,
-      "cuisine": ["Mexican"],
-      "rating": 4.2,
-      "delivery_time": {
+      "cuisines": ["Mexican"],
+      "avgRating": 4.2,
+      "sla": {
         "min": 30,
         "max": 45
       },
@@ -215,9 +215,9 @@ export const restoList=[
       "address": "Residency Road, Bengaluru",
       "latitude": 12.9775,
       "longitude": 77.6092,
-      "cuisine": ["Thai", "Asian"],
-      "rating": 4.3,
-      "delivery_time": {
+      "cuisines": ["Thai", "Asian"],
+      "avgRating": 4.3,
+      "sla": {
         "min": 28,
         "max": 43
       },
@@ -234,9 +234,9 @@ export const restoList=[
       "address": "Lavelle Road, Bengaluru",
       "latitude": 12.9748,
       "longitude": 77.6079,
-      "cuisine": ["Mediterranean", "Grills"],
-      "rating": 4.6,
-      "delivery_time": {
+      "cuisines": ["Mediterranean", "Grills"],
+      "avgRating": 4.6,
+      "sla": {
         "min": 35,
         "max": 50
       },
@@ -258,9 +258,9 @@ export const restoList=[
       "address": "Koramangala 1st Block, Bengaluru",
       "latitude": 12.9288,
       "longitude": 77.6259,
-      "cuisine": ["Desserts", "Ice Cream"],
-      "rating": 4.8,
-      "delivery_time": {
+      "cuisines": ["Desserts", "Ice Cream"],
+      "avgRating": 4.8,
+      "sla": {
         "min": 15,
         "max": 25
       },
@@ -282,9 +282,9 @@ export const restoList=[
       "address": "Indiranagar 12th Main, Bengaluru",
       "latitude": 12.9815,
       "longitude": 77.6439,
-      "cuisine": ["Vietnamese", "Asian"],
-      "rating": 4.1,
-      "delivery_time": {
+      "cuisines": ["Vietnamese", "Asian"],
+      "avgRating": 4.1,
+      "sla": {
         "min": 30,
         "max": 45
       },
@@ -301,9 +301,9 @@ export const restoList=[
       "address": "BTM Layout, Bengaluru",
       "latitude": 12.9165,
       "longitude": 77.6101,
-      "cuisine": ["Indian", "North Indian", "Parathas"],
-      "rating": 4.4,
-      "delivery_time": {
+      "cuisines": ["Indian", "North Indian", "Parathas"],
+      "avgRating": 4.4,
+      "sla": {
         "min": 22,
         "max": 37
       },
@@ -320,9 +320,9 @@ export const restoList=[
       "address": "Commercial Street, Bengaluru",
       "latitude": 12.9792,
       "longitude": 77.6063,
-      "cuisine": ["Middle Eastern", "Shawarma"],
-      "rating": 3.7,
-      "delivery_time": {
+      "cuisines": ["Middle Eastern", "Shawarma"],
+      "avgRating": 3.7,
+      "sla": {
         "min": 18,
         "max": 30
       },
@@ -335,13 +335,13 @@ export const restoList=[
     },
     {
       "restaurant_id": "80808",
-      "name": "Continental Cuisine",
+      "name": "Continental cuisines",
       "address": "Richmond Road, Bengaluru",
       "latitude": 12.9741,
       "longitude": 77.6099,
-      "cuisine": ["Continental"],
-      "rating": 4.0,
-      "delivery_time": {
+      "cuisines": ["Continental"],
+      "avgRating": 4.0,
+      "sla": {
         "min": 35,
         "max": 50
       },
@@ -350,7 +350,7 @@ export const restoList=[
       "has_online_ordering": true,
       "has_delivery": true,
       "is_open": false,
-      "img": "https://via.placeholder.com/200/26A69A/FFFFFF?Text=ContinentalCuisine"
+      "img": "https://via.placeholder.com/200/26A69A/FFFFFF?Text=Continentalcuisines"
     },
     {
       "restaurant_id": "90909",
@@ -358,9 +358,9 @@ export const restoList=[
       "address": "Malleshwaram, Bengaluru",
       "latitude": 13.0055,
       "longitude": 77.5682,
-      "cuisine": ["Beverages", "Juices", "Smoothies"],
-      "rating": 4.9,
-      "delivery_time": {
+      "cuisines": ["Beverages", "Juices", "Smoothies"],
+      "avgRating": 4.9,
+      "sla": {
         "min": 15,
         "max": 25
       },

@@ -44,6 +44,9 @@ border: 2px solid black;
   /* border: 2px solid black; */
   /* height: 300px; */
   width: 200px;
+  word-break: keep-all;
+  word-wrap: break-word;
+  /* white-space: nowrap; */
   border-radius: 10px;
   background-color: rgb(250, 246, 241);
   margin: 5px 0px;
