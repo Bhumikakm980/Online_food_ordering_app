@@ -2,12 +2,17 @@ import Restocard from "./Restocard";
 import {restoList} from '../utils/mockData';
 import { useState } from "react";
 import { useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 
 
 const Body=()=>{
 
     const[RestoList,setRestoList]=useState([]);
+
+    const[searchResto,setSearchResto]=useState("");
+
+    const[filetredRestorants,setFilteredRestorants]=useState([]);
 
    
   
@@ -25,16 +30,28 @@ const Body=()=>{
     },[])
 
     const name=async() =>{
-        // const response= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const response=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
                                     
     const jsonVal= await response.json();
    
     setRestoList(jsonVal?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+    setFilteredRestorants(jsonVal?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    }
+
+    function onInputChanged(e){
+      const searchVal=  RestoList.filter((item)=>{
+            if(item.info.name.toLowerCase().includes(searchResto.toLowerCase()))
+            return true;
+        else
+        return false;
+        })
+        setFilteredRestorants(searchVal);
     }
     
     if(RestoList.length===0){
-        return <h1>Loading,Please wait...</h1>
+        // return <h1>Loading,Please wait...</h1>
+        return <Shimmer></Shimmer>
     }
      
 
@@ -42,13 +59,23 @@ const Body=()=>{
     return(
       <>
       {/* <div className='search'>Search</div> */}
+      <div className="filter-button">
+      <div>
+      <input placeholder="Search by restorant name" id="search-resto" value={searchResto} onChange={(e)=>{setSearchResto(e.target.value)
+        onInputChanged(e)}
+      }></input>
+      <button onClick={onInputChanged}>Search</button>
+      </div>
       <button onClick={topRatedResto}>Top rated resto</button>
+      </div>
 
       <div className='resto-container'>
-      {RestoList.map((item)=>{
+      {/* {RestoList.map((item)=>{
+        return <Restocard restoProp={item}></Restocard>
+        })} */}
+       {filetredRestorants.map((item)=>{
         return <Restocard restoProp={item}></Restocard>
         })}
-       
       </div>
       </>
     )
