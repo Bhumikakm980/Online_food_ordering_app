@@ -7,15 +7,17 @@ import { useEffect } from "react";
 
 const Body=()=>{
 
-    const[topRated,setTopRated]=useState(restoList);
+    const[RestoList,setRestoList]=useState([]);
 
+   
+  
     function topRatedResto(){
-        const List=topRated.filter((item)=> {
+        const List=RestoList.filter((item)=> {
             if(item.info.avgRating>=4.6){
                 return true;
             }
         })
-        setTopRated(()=>List);
+        setRestoList(()=>List);
     }
 
     useEffect(()=>{
@@ -28,9 +30,14 @@ const Body=()=>{
                                     
     const jsonVal= await response.json();
    
-    setTopRated(jsonVal?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setRestoList(jsonVal?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     
+    if(RestoList.length===0){
+        return <h1>Loading,Please wait...</h1>
+    }
+     
+
     
     return(
       <>
@@ -38,7 +45,7 @@ const Body=()=>{
       <button onClick={topRatedResto}>Top rated resto</button>
 
       <div className='resto-container'>
-      {topRated.map((item)=>{
+      {RestoList.map((item)=>{
         return <Restocard restoProp={item}></Restocard>
         })}
        
