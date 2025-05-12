@@ -1,7 +1,11 @@
 
 import './App.css';
+import { createRoot } from 'react-dom/client';
 import Body from './components/Body';
 import Headers from './components/Header';
+import Aboutus from './components/Aboutus';
+import Error from './components/Error';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 
 function App() {
@@ -75,10 +79,37 @@ function App() {
   return (
     <>
     <Headers></Headers>
-    <Body></Body>
+    {/* <Body></Body> */}
+    <Outlet></Outlet>
       
     </>
   )
+
+  
 }
 
-export default App
+// export default App;
+
+const appRoute=createBrowserRouter([
+  {
+    path:"/",
+    element:<App></App>,
+    errorElement:<Error></Error>,
+    children:[
+      {
+        path:"/",
+        element:<Body></Body>
+      },
+      {
+        path:"/about",
+        element:<Aboutus></Aboutus>
+      }
+    ]
+
+
+  }]
+)
+
+createRoot(document.getElementById('root')).render(<RouterProvider router={appRoute}></RouterProvider>)
+
+
