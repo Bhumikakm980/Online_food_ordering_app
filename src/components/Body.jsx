@@ -3,6 +3,7 @@ import {restoList} from '../utils/mockData';
 import { useState } from "react";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 
@@ -33,6 +34,7 @@ const Body=()=>{
         const response=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
                                     
     const jsonVal= await response.json();
+    console.log(jsonVal);
    
     setRestoList(jsonVal?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
@@ -74,7 +76,7 @@ const Body=()=>{
         return <Restocard restoProp={item}></Restocard>
         })} */}
        {filetredRestorants.map((item)=>{
-        return <Restocard restoProp={item}></Restocard>
+        return <Link key={item.info.id} to={"/restomenu/"+item.info.id}><Restocard restoProp={item}></Restocard></Link>
         })}
       </div>
       </>

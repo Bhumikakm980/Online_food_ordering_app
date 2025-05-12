@@ -18,7 +18,7 @@ const Headers=()=>{
         <img src={LOGO_URL}></img>
         <h1>Welcome Home,food is waiting for you❤️</h1>
         <ul>
-          <li>Home</li>
+          <Link to="/"><li>Home</li></Link>
           <li>Cart</li>
           <li>Contact Us</li>
           <li><Link to="/about">About Us</Link></li>

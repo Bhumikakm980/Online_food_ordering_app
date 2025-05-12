@@ -5,6 +5,7 @@ import Body from './components/Body';
 import Headers from './components/Header';
 import Aboutus from './components/Aboutus';
 import Error from './components/Error';
+import RestoMenu from './components/RestoMenu';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 
@@ -103,6 +104,10 @@ const appRoute=createBrowserRouter([
       {
         path:"/about",
         element:<Aboutus></Aboutus>
+      },
+      {
+        path:"/restomenu/:restoid",
+        element:<RestoMenu></RestoMenu>
       }
     ]
 
