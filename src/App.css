@@ -94,3 +94,7 @@ border: 2px solid black;
 .filter-button div{
   margin: 5px;
 }
+.link-id{
+  text-decoration: none;
+  color: inherit;
+}

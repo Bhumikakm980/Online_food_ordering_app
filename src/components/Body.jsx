@@ -76,7 +76,7 @@ const Body=()=>{
         return <Restocard restoProp={item}></Restocard>
         })} */}
        {filetredRestorants.map((item)=>{
-        return <Link key={item.info.id} to={"/restomenu/"+item.info.id}><Restocard restoProp={item}></Restocard></Link>
+        return <Link className="link-id" key={item.info.id} to={"/restomenu/"+item.info.id}><Restocard restoProp={item}></Restocard></Link>
         })}
       </div>
       </>
