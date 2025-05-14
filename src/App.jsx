@@ -7,6 +7,8 @@ import Aboutus from './components/Aboutus';
 import Error from './components/Error';
 import RestoMenu from './components/RestoMenu';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import Contactus from './components/Contactus';
+
 
 
 function App() {
@@ -103,16 +105,25 @@ const appRoute=createBrowserRouter([
       },
       {
         path:"/about",
-        element:<Aboutus></Aboutus>
+        element:<Aboutus userName={"anj"}></Aboutus>
       },
       {
         path:"/restomenu/:restoid",
         element:<RestoMenu></RestoMenu>
+      },
+      {
+        path:"/contactus",
+        element:<Contactus></Contactus>
       }
+      
+      
     ]
 
 
-  }]
+  },
+  
+  
+]
 )
 
 createRoot(document.getElementById('root')).render(<RouterProvider router={appRoute}></RouterProvider>)

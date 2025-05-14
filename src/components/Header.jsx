@@ -20,7 +20,7 @@ const Headers=()=>{
         <ul>
           <Link to="/" className="link-id"><li>Home</li></Link>
           <li>Cart</li>
-          <li>Contact Us</li>
+          <li><Link to="/contactus" className="link-id">Contact Us</Link></li>
           <li><Link to="/about" className="link-id">About Us</Link></li>
           <button className="btn-toggle" onClick={clickedOnInto}>{btnToggle?"LOGOUT":"LOGIN"}</button>
         </ul>
