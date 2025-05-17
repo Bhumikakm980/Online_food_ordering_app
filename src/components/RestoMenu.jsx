@@ -1,33 +1,37 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_URL } from "../utils/constants";
+// import { MENU_URL } from "../utils/constants";
+import useRestomenu from "../utils/useRestomenu";
 
 const RestoMenu=()=>{
 
-    const[restoDetail,setRestodetail]=useState(null);
+    // const[restoDetail,setRestodetail]=useState(null);
 
     const {restoid}=useParams();
     // console.log(idds);
 
-    useEffect(()=>{
-        restoMenu()
-    },[])
-    const restoMenu=async ()=>{
-        const data=await fetch(MENU_URL+restoid);
-        const json=await data.json();
-        console.log(json);
-        setRestodetail(json.data);
-    }
+    // custom hook to call details api
+    const restoitems=useRestomenu(restoid);
 
-    if(restoDetail==null){
+    // useEffect(()=>{
+    //     restoMenu()
+    // },[])
+    // const restoMenu=async ()=>{
+    //     const data=await fetch(MENU_URL+restoid);
+    //     const json=await data.json();
+    //     console.log(json);
+    //     setRestodetail(json.data);
+    // }
+
+    if(restoitems==null){
         return <Shimmer></Shimmer>
     }
 
    
 
-const {name,cuisines,costForTwoMessage,avgRating}=restoDetail.cards[2].card.card.info;
-const menu=restoDetail?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards;
+const {name,cuisines,costForTwoMessage,avgRating}=restoitems.cards[2].card.card.info;
+const menu=restoitems?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards;
 console.log(menu);
 
     return(
