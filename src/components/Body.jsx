@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useStatus from '../utils/useStatus';
+
 
 
 
@@ -15,7 +17,8 @@ const Body=()=>{
 
     const[filetredRestorants,setFilteredRestorants]=useState([]);
 
-   
+    const internetStatus=useStatus();
+    console.log(internetStatus);
   
     function topRatedResto(){
         const List=RestoList.filter((item)=> {
@@ -57,6 +60,9 @@ const Body=()=>{
     }
      
 
+    if(internetStatus===false){
+      return <h1>It's looks like you are offline</h1>
+    }
     
     return(
       <>

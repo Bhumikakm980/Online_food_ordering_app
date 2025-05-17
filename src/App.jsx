@@ -1,9 +1,12 @@
 
 import './App.css';
+import { lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import Body from './components/Body';
 import Headers from './components/Header';
-import Aboutus from './components/Aboutus';
+// import Aboutus from './components/Aboutus';
+// lazeloading/on-demand loading
+const Aboutus=lazy(()=>import('./components/Aboutus'));
 import Error from './components/Error';
 import RestoMenu from './components/RestoMenu';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
