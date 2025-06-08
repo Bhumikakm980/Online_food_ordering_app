@@ -1,5 +1,5 @@
-import Restocard from "./Restocard";
-import {restoList} from '../utils/mockData';
+import Restocard,{recommendedResto}  from "./Restocard";
+// import {restoList} from '../utils/mockData';
 import { useState } from "react";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -19,14 +19,17 @@ const Body=()=>{
 
     const internetStatus=useStatus();
     console.log(internetStatus);
+
+    const RecommendedComponent=recommendedResto(Restocard);
   
+ 
     function topRatedResto(){
         const List=RestoList.filter((item)=> {
-            if(item.info.avgRating>=4.6){
+            if(item.info.avgRating>=4.5){
                 return true;
             }
         })
-        setRestoList(()=>List);
+        setFilteredRestorants(()=>List);
     }
 
     useEffect(()=>{
@@ -54,6 +57,8 @@ const Body=()=>{
         setFilteredRestorants(searchVal);
     }
     
+    
+
     if(RestoList.length===0){
         // return <h1>Loading,Please wait...</h1>
         return <Shimmer></Shimmer>
@@ -81,8 +86,17 @@ const Body=()=>{
       {/* {RestoList.map((item)=>{
         return <Restocard restoProp={item}></Restocard>
         })} */}
+        
        {filetredRestorants.map((item)=>{
-        return <Link className="link-id" key={item.info.id} to={"/restomenu/"+item.info.id}><Restocard restoProp={item}></Restocard></Link>
+      
+        return <Link className="link-id" key={item.info.id} to={"/restomenu/"+item.info.id}>
+          {item.info.avgRatingString>4.5?
+            <RecommendedComponent restoProp={item}></RecommendedComponent>: 
+          
+          <Restocard restoProp={item}></Restocard>}
+
+          </Link>
+       
         })}
       </div>
       </>

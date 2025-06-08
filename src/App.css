@@ -1,6 +1,9 @@
+@import "tailwindcss";
+
+
 body{
   /* z */
-  background-color: antiquewhite;
+  background-color: white;
 }
 
 
