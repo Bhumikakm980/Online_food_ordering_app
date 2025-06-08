@@ -5,7 +5,7 @@ const ItemDetails=({item})=>{
           <div className="m-10 border-b-1 p-3 flex justify-between">
             <div className="w-9/12">
                        <h1>{item.card.info.name}</h1>
-                       <h1>₹.{item.card.info.defaultPrice/100}</h1>
+                       <h1>₹{item.card.info.defaultPrice?item.card.info.defaultPrice/100:item.card.info.price/100}</h1>
                        <p className="text-xs text-left">{item.card.info.description}</p>
                        <h1>{item.card.info.ratings.aggregatedRating.rating} ⭐</h1>
             </div>

@@ -16,7 +16,7 @@ function showRecommended(){
                 <div className="text-left">
                     {/* <h6 className="font-bold text-2xl my-5">{restoitems.cards[0].card.card.text}</h6> */}
                     <div className="w-6/12 m-auto bg-gray-50 shadow-lg my-4 py-2">
-                    <div className="flex justify-between" onClick={showRecommended}>
+                    <div className="flex justify-between cursor-pointer" onClick={showRecommended}>
                     <span className="font-bold text-2xs">{i.card.card.title}({i.card.card.itemCards?.length})</span>
                     <span>🡇</span>
                     </div>
