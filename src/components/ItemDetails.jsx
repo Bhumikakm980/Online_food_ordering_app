@@ -20,5 +20,3 @@ const ItemDetails=({item})=>{
 }
 
 export default ItemDetails;
-
-
