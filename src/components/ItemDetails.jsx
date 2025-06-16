@@ -1,6 +1,21 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItems } from "../utils/cartslice";
+import { removeItems } from "../utils/cartslice";
 
 const ItemDetails=({item})=>{
+
+    // dispatching the action
+    const dispatch=useDispatch();
+
+    // calling the reducer function
+    const handleAddtoCart=(item)=> dispatch(addItems(item));
+    
+    const handleRemoveCart=(item)=>dispatch(removeItems(item));
+   
+
+    
+
     return(
           <div className="m-10 border-b-1 p-3 flex justify-between">
             <div className="w-9/12">
@@ -12,7 +27,8 @@ const ItemDetails=({item})=>{
             <div className="w-4/12 justify-end">
             <img src={CDN_URL+item.card.info.imageId} className="h-48"></img>
             <div className="relative">
-            <button className=" rounded-l bg-black text-white p-1 m-auto absolute bottom-0.5">Add +</button>
+            <button onClick={()=>handleAddtoCart(item)} className="rounded-l bg-black text-white p-1 m-auto absolute bottom-0.5 cursor-pointer">Add +</button>
+            <button onClick={()=>handleRemoveCart(item)} className="rounded-l bg-black text-white p-1 m-auto absolute bottom-0.5  left-28 cursor-pointer">Remove +</button>
             </div>
             </div>
         </div>

@@ -47,6 +47,7 @@ border: 2px solid black;
   /* border: 2px solid black; */
   /* height: 300px; */
   width: 200px;
+
   word-break: keep-all;
   word-wrap: break-word;
   /* white-space: nowrap; */
@@ -58,7 +59,7 @@ border: 2px solid black;
 }
 
 .resto-card:hover{
-  border: 1px solid rgb(139, 136, 136);
+  /* border: 1px solid rgb(139, 136, 136); */
   cursor: pointer;
  
 

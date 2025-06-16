@@ -1,12 +1,10 @@
 import Restocard,{recommendedResto}  from "./Restocard";
 // import {restoList} from '../utils/mockData';
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState,useEffect,useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useStatus from '../utils/useStatus';
-
-
+import userContext from "../utils/userContext";
 
 
 const Body=()=>{
@@ -18,7 +16,10 @@ const Body=()=>{
     const[filetredRestorants,setFilteredRestorants]=useState([]);
 
     const internetStatus=useStatus();
-    console.log(internetStatus);
+    
+    // const welcomeUser=useContext(userContext);
+
+    const {name,setUsername}=useContext(userContext);
 
     const RecommendedComponent=recommendedResto(Restocard);
   
@@ -33,10 +34,10 @@ const Body=()=>{
     }
 
     useEffect(()=>{
-        name();
+        nameVal();
     },[])
 
-    const name=async() =>{
+    const nameVal=async() =>{
         const response=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
                                     
     const jsonVal= await response.json();
@@ -49,7 +50,7 @@ const Body=()=>{
 
     function onInputChanged(e){
       const searchVal=  RestoList.filter((item)=>{
-            if(item.info.name.toLowerCase().includes(searchResto.toLowerCase()))
+            if(item.info.nameVal.toLowerCase().includes(searchResto.toLowerCase()))
             return true;
         else
         return false;
@@ -72,16 +73,24 @@ const Body=()=>{
     return(
       <>
       {/* <div className='search'>Search</div> */}
+      
       <div className="filter-button">
       <div>
-      <input placeholder="Search by restorant name" id="search-resto" value={searchResto} onChange={(e)=>{setSearchResto(e.target.value)
+      <input placeholder="Search by restorant name" id="search-resto" className="border border-black rounded-b-sm w-xl p-0.5 mx-3" value={searchResto} onChange={(e)=>{setSearchResto(e.target.value)
         onInputChanged(e)}
       }></input>
-      <button onClick={onInputChanged}>Search</button>
+      {/* <button onClick={onInputChanged}>Search</button> */}
       </div>
-      <button onClick={topRatedResto}>Top rated resto</button>
+      <button onClick={topRatedResto} className=" border border-black rounded-l px-1  h-7 mt-1.5 cursor-pointer">Get Top rated resto</button>
+      
+      <h1 className="mt-1.5 mx-40 text-xl">Welcome {name}</h1>
+      <label className="mt-3 px-0.5">change name</label>
+      <input className="border border-black h-8 mt-3 mr-3 text-center" 
+      // value={name} 
+      onChange={(e)=> setUsername(e.target.value)}
+      ></input>
       </div>
-
+      
       <div className='resto-container'>
       {/* {RestoList.map((item)=>{
         return <Restocard restoProp={item}></Restocard>

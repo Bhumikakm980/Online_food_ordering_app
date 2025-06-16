@@ -1,6 +1,6 @@
 
 import './App.css';
-import { lazy } from 'react';
+import { lazy, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import Body from './components/Body';
 import Headers from './components/Header';
@@ -11,6 +11,10 @@ import Error from './components/Error';
 import RestoMenu from './components/RestoMenu';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Contactus from './components/Contactus';
+import userContext from './utils/userContext';
+import { Provider } from 'react-redux';
+import appstore from './utils/appstore';
+import Cart from './components/Cart';
 
 
 
@@ -82,13 +86,28 @@ function App() {
   //   )
   // }
 
+  const [usenameContext,setUsername]=useState();
+
+  useEffect(()=>{
+   const data={
+      name:"jeh"
+    }
+    setUsername(data.name)
+  },[])
+
+
   return (
+    
     <>
+    <Provider store={appstore}>
+   <userContext.Provider value={{name:usenameContext,setUsername}} >
     <Headers></Headers>
+    </userContext.Provider>
     {/* <Body></Body> */}
     <Outlet></Outlet>
-      
+    </Provider>
     </>
+  
   )
 
   
@@ -117,6 +136,10 @@ const appRoute=createBrowserRouter([
       {
         path:"/contactus",
         element:<Contactus></Contactus>
+      },
+      {
+        path:"/cart",
+        element:<Cart></Cart>
       }
       
       

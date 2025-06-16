@@ -5,7 +5,7 @@ const Restocard=(restoProp)=>{
 console.log("resto"+restoProp)
     const{cloudinaryImageId,name,cuisines,avgRating,costForTwo}=restoProp.restoProp.data?restoProp.restoProp.data:restoProp.restoProp.info;
     return(
-      <div className='resto-card'>
+      <div className='resto-card hover:shadow-lg'>
         <img src={CDN_URL+cloudinaryImageId} alt="Resto img" />
         <h3>{name}</h3>
         <h4>{cuisines.join(',')}</h4>
@@ -23,7 +23,7 @@ console.log("resto"+restoProp)
     return(restoProp)=>{
       return (
         <>
-      <h1>Recommended</h1>
+      <span className="text-xs absolute m-1 border border-black bg-black text-white">Recommended</span>
       <Restocard {...restoProp}></Restocard>
       </>
       )
