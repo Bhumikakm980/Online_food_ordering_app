@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice,current } from "@reduxjs/toolkit";
 
 const cartSlice=createSlice({
 
@@ -14,7 +14,8 @@ const cartSlice=createSlice({
         },
         removeItems:(state,action)=>{
             // state.items.pop();
-            state.items.remove(action.payload.card.info.id);
+            let valueToRemove=current(state);
+            state.items= valueToRemove.items.filter((i)=>(i.card.info.id!=action.payload.card.info.id));
         },
         clearCart:(state,action)=>{
             state.items.length=0;
